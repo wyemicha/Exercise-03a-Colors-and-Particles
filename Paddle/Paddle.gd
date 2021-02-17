@@ -27,6 +27,9 @@ func _physics_process(_delta):
 	
 	position.x += s*t
 
+func start_paddle():
+	pass
+
 func _on_HUD_changed():
 	update_color()
 
