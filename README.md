@@ -128,7 +128,7 @@ func emit_particle(pos):
   * Angular Velocity->Velocity = 100
   * Angular Velocity->Velocity Rand = 1
   * Angle->Angle Random = 0.5
-  * Angle->Angle Curve = new CurveTexture (make it ramp to 0)
+  * Angle->Angle Curve = new CurveTexture (make it ramp 360 to -360)
   * Scale->Scale = 0.5
   * Scale->Scale Random = 0.5
   * Scale->Scale Curve = new CurveTexture (make it ramp to 0)
@@ -164,10 +164,12 @@ func emit_particle(pos):
   * Scale->Scale Random = 0.2
   * Scale->Scale Curve = new CurveTexture (make it ramp to 0)
   * Color->Color Ramp = new GradientTexture (make it ramp to transparent)
-  * Hue Variation->Variation Curve =  new CurveTexture (make it ramp to 0)
- When the ball hits the block, move the Particles2D position and rotation and set emitting=true
+  * Hue Variation->Variation Curve =  new CurveTexture (make it ramp to -1)
+
+When the ball hits the block, move the Particles2D position and rotation and set emitting=true
+
 In Brick/Brick.gd, the emit_particle function should be the following:
-```
+``` 
 func emit_particle(pos):
 	if HUD.particle_blocks:
 		$Particles2D.texture = textures[randi() % textures.size()]
@@ -196,8 +198,9 @@ func emit_particle(pos):
   * Scale->Scale = 0.3
   * Scale->Scale Curve = new CurveTexture (make it ramp to 0)
   * Color->Color Ramp = new GradientTexture (make it ramp to 0)
-  * Hue Variation->Variation Curve =  new CurveTexture (make it ramp to 0)
+  * Hue Variation->Variation Curve =  new CurveTexture (make it ramp to -1)
  * Node2D->Position = (7,7)
+ 
 Append the following to the update_color function, line 39:
 ```
     if HUD.particle_ball:
