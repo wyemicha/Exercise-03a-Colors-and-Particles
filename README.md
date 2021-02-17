@@ -1,6 +1,8 @@
 # Exercise-03a-Colors-and-Particles
 Exercise for MSCH-C220, 17 February 2021
 
+A demonstration of this exercise is available here: [https://youtu.be/rsgP2rRK0-Q](https://youtu.be/rsgP2rRK0-Q)
+
 This exercise is designed to explore adding color and particle effects to a boring brick breaker game (in the spirit of "Juice it or Lose it").
 
 Fork this repository. When that process has completed, make sure that the top of the repository reads [your username]/Exercise-03a-Color-and-Particles. *Edit the LICENSE and replace BL-MSCH-C220-S21 with your full name.* Commit your changes.
