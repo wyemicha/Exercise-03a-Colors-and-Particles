@@ -45,6 +45,12 @@ For the paddle (line 11 in Paddle/Paddle.gd):
 For the ball (line 7 in Ball/Ball.gd):
  * Cyan 5
 
+For the background (line 5 in Background/Background.gd), colors should be a list of colors as follows:
+ * Black
+ * Gray 9
+ * Gray 8
+ * Gray 9
+
 The update_color function in Brick/Brick.gd should be the following:
 ```
 func update_color():
@@ -54,6 +60,16 @@ func update_color():
 	else:
 		$Color.color = Color(1,1,1,1)
 ```
+
+The update_color function in Background/Background.gd should be the following:
+```
+func update_color():
+	if HUD.color_background:
+		color = colors[c]
+	else:
+		color = Color(0,0,0,1)
+```
+
 
 You will also need to edit the particle emmitters in the Walls, Paddle, and Bricks nodes so that the paddle emits confetti, and the walls and bricks emit bubbles (the assets are in the Assets folder).
 
