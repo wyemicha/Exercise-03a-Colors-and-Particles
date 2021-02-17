@@ -1,0 +1,156 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=1]
+
+[node name="HUD" type="Control"]
+pause_mode = 2
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 1035.0
+margin_bottom = 778.0
+color = Color( 0, 0, 0, 0.862745 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu_Background" type="ColorRect" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1010.0
+margin_bottom = 510.0
+color = Color( 0.286275, 0.313726, 0.341176, 0.752941 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 90.0
+margin_bottom = 90.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="Control" parent="Menu"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Color_Paddle" type="CheckBox" parent="Menu/Color"]
+margin_right = 126.419
+margin_bottom = 26.4193
+text = "Colored Paddle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color_Ball" type="CheckBox" parent="Menu/Color"]
+margin_top = 30.0
+margin_right = 126.419
+margin_bottom = 56.4193
+text = "Colored Ball"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color_Blocks" type="CheckBox" parent="Menu/Color"]
+margin_top = 60.0
+margin_right = 126.419
+margin_bottom = 86.4193
+text = "Colored Blocks"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color_Background" type="CheckBox" parent="Menu/Color"]
+margin_top = 90.0
+margin_right = 155.0
+margin_bottom = 116.419
+text = "Colored Background"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particles" type="Control" parent="Menu"]
+margin_left = 10.0
+margin_top = 200.0
+margin_right = 10.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Particle_Paddle" type="CheckBox" parent="Menu/Particles"]
+text = "Particle Paddle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particle_Blocks" type="CheckBox" parent="Menu/Particles"]
+margin_top = 30.0
+margin_right = 122.0
+margin_bottom = 54.0
+text = "Particle Blocks"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particle_Walls" type="CheckBox" parent="Menu/Particles"]
+margin_top = 60.0
+margin_right = 115.0
+margin_bottom = 84.0
+text = "Particle Walls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Particle_Ball" type="CheckBox" parent="Menu/Particles"]
+margin_top = 90.0
+margin_right = 115.0
+margin_bottom = 114.0
+text = "Particle Ball"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset" type="Button" parent="Menu"]
+margin_left = 800.0
+margin_top = 600.0
+margin_right = 880.0
+margin_bottom = 630.0
+text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="Menu"]
+margin_left = 800.0
+margin_top = 650.0
+margin_right = 880.0
+margin_bottom = 680.0
+text = "Quit"
+[connection signal="toggled" from="Menu/Color/Color_Paddle" to="." method="_on_Color_Paddle_toggled"]
+[connection signal="toggled" from="Menu/Color/Color_Ball" to="." method="_on_Color_Ball_toggled"]
+[connection signal="toggled" from="Menu/Color/Color_Blocks" to="." method="_on_Color_Blocks_toggled"]
+[connection signal="toggled" from="Menu/Color/Color_Background" to="." method="_on_Color_Background_toggled"]
+[connection signal="toggled" from="Menu/Particles/Particle_Paddle" to="." method="_on_Particle_Paddle_toggled"]
+[connection signal="toggled" from="Menu/Particles/Particle_Blocks" to="." method="_on_Particle_Blocks_toggled"]
+[connection signal="toggled" from="Menu/Particles/Particle_Walls" to="." method="_on_Particle_Walls_toggled"]
+[connection signal="toggled" from="Menu/Particles/Particle_Ball" to="." method="_on_Particle_Ball_toggled"]
+[connection signal="pressed" from="Menu/Reset" to="." method="_on_Reset_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_Quit_pressed"]
